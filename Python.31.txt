@@ -1,0 +1,296 @@
+#1 How to get user input
+-- Getting user input in Python is straightforward. You can use the input() function 
+to get input from the user. 
+The input function takes a single argument, which is the 
+prompt message displayed to the user
+
+E.g 1
+x = input("enter the value")
+a = int(x)
+y = input("enter the value")
+b = int(y)
+z = a + b
+print(z)
+
+O/P
+enter the value5
+enter the value2
+7
+
+E.g 2
+mh =input("enter the value")
+print(mh[1])
+
+or
+mh =input("enter the value")[0]
+print(mh)
+ O/P
+enter the valuedddd
+d
+
+====== > 5 eval function
+eval function
+-- The eval() function in Python is used to evaluate an expression entered by the user as a string. 
+The eval() function returns the result of the expression as a value.
+
+E.g 3
+result = eval(input("enter a expr")) ## eval fuction
+print(result
+O/P
+enter a expr2 + 2 - 2
+2
+
+=========>  Passing values from command line
+E.g 4
+import sys
+
+x = int(sys.argv[1])
+y = int(sys.argv[2])
+z = x + y
+print(z)
+O/P 
+
+
+============= IF , ELIF and ELSE
+
+IF
+If statement:-
+- In programming, we have to apply conditions as per the logic of the code.
+Syntax:-
+ if (condition):
+  statement;
+
+ELIF
+- If the if condition s false, then the condition inside the elif will be checked and executed
+
+ELse
+Else block:-
+- We can also use multiple if blocks in a code.
+
+e.g
+x = 5
+if x ==1:
+    print('one')
+elif x ==2:
+    print('two')
+elif x ==3:
+    print('three')
+elif x ==4:
+    print('four')
+else:
+    print("wrong output")
+
+
+=======================>  
+=========================WHILE LOOP and FOR LOOP
+
+while loop
+- In the while loop, we need a counter to count the number of times, a statement can be executed.
+
+- Syntax of the while loop:-
+  counter variable
+  while (condition):
+  statements;
+  incrementation/ decrementation
+
+exmple
+Note ; 
+{(i = 5
+while i>=1:) count 5,4,3,2,1}
+{(i = 1
+while i<=5:) count 1,2,3,4,5}
+
+i=1
+while i>=1:
+print("mahesh")
+i = i+1
+
+
+E.g
+== >increment
+e.g 1
+
+i = 1
+while i<=10:
+    print("savadatti ")
+    i = i+1
+O/P is 10 time print savasdatti    
+
+E.g 2
+
+i = 5
+while i>=1:
+    print("savadatti ", i)  #i is print including condition with numbers
+    i = i-1
+    
+O/P is 10 time print (savadatti 1
+			,,,,,,,,10)
+
+e.g 3
+
+i = 5
+while i>=1:
+    print("savadatti ",end="")
+    i = i-1
+    
+O/P is print (savadatti,savadatti,,,,)
+
+e.g 4
+
+i = 5
+while i>=1:
+    print("savadatti ",end="")
+    i = i-1
+    print()
+O/P is print (savadatti,
+		savadatti,,,,)
+
+
+=======================> FOR LOOP
+
+A for loop is used for iterating over a sequence 
+(that is either a list, a tuple, a dictionary, a set, or a string).
+
+With the for loop we can execute a set of statements,
+ once for each item in a list, tuple, set etc.
+
+ e,g 1 
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  print(x)
+
+ O/P is apple", "banana", "cherry
+
+e,g 2
+for x in "banana":
+  print(x)
+
+O/P is  
+b
+a
+n
+a
+n
+a
+
+e,g3
+x = ['navin',65,2.5]
+for i in x:
+print(i)
+
+O/P; navin,65,205
+
+
+e.g 4
+form i in range(11,20,1)
+print(i)
+o/p;
+11,12,13,14,15,16
+
+
+==========Break statement
+
+e.g1
+With the break statement we can stop the loop before it has looped through all the items
+
+av = 5
+
+x = int(input("How many candies you want?"))
+
+i = 1
+while i <=x:
+
+    if i>av:
+        print("out of stock")
+        break
+        
+    print("candy")
+    i+=1
+        
+print("bye") 
+
+o/p ;
+candy,candy,candy,candy,candy /out of stock
+
+e,g2
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  if x == "banana":
+    break
+  print(x)
+
+o/p; apple
+
+====================> continue Statement
+With the continue statement we can stop the current iteration of the loop, and continue with the next
+ e,g1
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  if x == "banana":
+    continue
+  print(x)
+
+o/p ; apple,cherry
+
+e,g 
+for i in range(1,100):
+    
+    if i%3==0 and i%5==0:
+        continue
+    print(i)
+
+e,g 1)  Pass
+
+for i in range(1,100):
+    
+    if i%2!=0:
+        pass
+
+    else:
+        print(i)
+
+Example;
+
+for j in range(4):
+    for j in range(4):
+        print("# ",end="")
+    print()
+
+ o/p
+# # # # 
+# # # # 
+# # # # 
+# # # #   
+
+e,g1
+
+for j in range(4):
+    for j in range(i-i):
+        print("# ",end="")
+    print()
+
+
+E,g (for and else)
+
+nums=[11,21,27,26,31]
+
+for num in nums:
+    if num%5==0:
+        print(num)
+        break
+else:
+    print("not found")  
+
+e,g 4
+
+num=7 or 10
+
+for i in range(2,num):
+    if num % i==0:
+        print("not prime")
+        break
+else:
+    print("prime")  
+
+o/p prime or not prime
+
