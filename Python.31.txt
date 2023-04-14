@@ -294,3 +294,106 @@ else:
 
 o/p prime or not prime
 
+============================>>>>> ARRAY
+
+An array is a special variable, which can hold more than 
+one value at a time. If you have a list of items
+
+- We can also create a blank array and can take the values for it from the user.
+- First, we have to take the length of an array from the user
+
+from array import *
+
+arr = array('i',[])
+n = int(input("Enter the length of the array"))
+for i in range(n):
+    x = int(input("enter  the next value"))
+    arr.append(x)
+print(arr)
+
+val = int(input("enter the value for search"))
+
+k =0
+for e in arr:
+    if e==val:
+          print(k)
+          break
+
+    k+=1
+
+O/P
+Enter the length of the array3
+enter  the next value555
+enter  the next value22
+enter  the next value5
+array('i', [555, 22, 5])
+enter the value for search28
+2
+
+Example:::===>    Def
+
+def update(x):
+    x = 8
+    print("x",x)
+
+a= 10    
+update(a)
+print("a",a)
+
+O/P x=8,a= 10
+
+e,g
+
+def update(lst):
+    print(id(lst))
+    
+    lst[1] = 25
+    print(id(lst))
+    print("lst",lst)
+
+lst =[10,20,30]
+print(id(lst))
+update(lst)
+print("lst",lst)
+
+O/P( same id print)
+2292121268288
+2292121268288
+2292121268288
+lst [10, 25, 30]
+lst [10, 25, 30]
+
+==============>  KEYWORDED VARIABLE LENGTH AND ARGUMENTS
+e,g1
+def person(name, *data): # (*data) keyword argument  
+	print(name)
+	print(data)
+
+person('navine',28,'mumbai',9585658)
+O/P;; navin  (28,'mumbai',9585658)
+
+
+e,g2
+def person(name, **data): # (**data) keyword argument  
+	print(name)
+	print(data)
+
+person('navine', age=28, city='mumbai', mob=9585658)
+O/P;; navin  (28,age=28, city='mumbai', mob=9585658)
+
+
+e,g2
+def person(name, **data): # (**data) keyword argument  
+	print(name)
+	
+	for i,j in data.items():
+		print(i,j)
+
+
+person('navine', age=28, city='mumbai', mob=9585658)
+
+O/P
+navine
+age 28
+city mumbai
+mob 9585658
