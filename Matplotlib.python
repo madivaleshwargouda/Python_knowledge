@@ -227,17 +227,157 @@ plt.plot(x,y4)
 plt.title("PLOT-4")
 plt.show()
 
+===============> LEGEND FUNCTION IN MATPLOTLIB 
+A legend is an area describing the elements of the graph. 
+In the matplotlib library, there’s a function called legend() 
+which is used to Place a legend on the axes.
+
+E,g
+
+from matplotlib import pyplot as plt
+import numpy as np
+x=np.arange(0,15,1)
+y1=x**2
+y2=x**3
+    # plt.plot(x,y1,x,y2)
+plt.plot(x,y1,label="SQUARES")
+plt.plot(x,y2,label="CUBES")
+
+plt.legend(loc="upper left",framealpha=1,facecolor="yellow",edgecolor="blue",fancybox="true,shadow=true,fontsize=15'")
+plt.show()
+
+note: framealpha 0 or 1 only
+
+
+======================> SCATTER PLOT IN MATPLOTLIB
+
+Note:
+pyplot.scatter(x,y) = 1 plot= blue -> default
+pyplot.scatter(x,y) = 2 plot= orange -> default
+
+e,g
+from matplotlib import pyplot as plt
+import random
+x = [1,2,3,4,5,6,7,8,9,10]
+y = [10,20,30,40,50,60,70,80,90,100]
+random.shuffle(y)
+
+plt.scatter(x,y,color="black",marker="d",s=15,lw=5,alpha=0.5)
+
+x1 = [1,2,3,4,5,6,7,8,9,10]
+y1 = [10,20,30,40,50,60,70,80,90,100]
+random.shuffle(y1)
+
+plt.scatter(x1,y1,color="green",marker="^",s=15,lw=5)
+plt.show()
+
+eg,2
+
+from matplotlib import pyplot as plt
+x=[10,20,30,40,50]
+y=[100,200,300,400,500]
+colors=["red","green","blue","black","pink"]
+size=[50,100,200,300,400]
+
+plt.scatter(x,y,c=colors,s=size,cmap="rainbow",alpha=0.5)
+plt.colorbar()
+plt.show()
+
+=====> BAR CHART
+e,g 1  it is scatter BAR chart
+
++++  this one vartical line
+
+from matplotlib import pyplot as plt
+
+years=["2017","2018","2019","2020"]
+placements=[150,275,258,100]
+
+cse=[75,80,47,82]
+it=[46,58,35,52]
+ece=[67,59,72,60]
+
+ece_start=[cse[i]+it[i] for i in range(len(cse))]
+
+plt.title("placements comparision")
+plt.bar(years,cse,width=0.4,color='red')
+plt.bar(years,it,bottom=cse,width=0.4,color='yellow')
+plt.bar(years,ece,bottom=it,width=0.4,color='black')
+
+
+plt.ylim(0,200)
+plt.show()
 
 
 
+e,g 2 [horizental] Barh chart
+
+note:left(bottom),barh(bar),Height(width)
+
+from matplotlib import pyplot as plt
+
+years=["2017","2018","2019","2020"]
+placements=[150,275,258,100]
+
+cse=[75,80,47,82]
+it=[46,58,35,52]
+ece=[67,59,72,60]
+
+ece_start=[cse[i]+it[i] for i in range(len(cse))]
+
+plt.title("placements comparision")
+plt.barh(years,cse,height=0.4,color='red',label="cse")
+plt.barh(years,it,left=cse,height=0.4,color='yellow',label="it")
+plt.barh(years,ece,left=it,height=0.4,color='black',label="ece")
+
+plt.xlabel("placements")
+plt.ylabel("Years")
+plt.legend()
+
+plt.show()
+
+==================GROUPED BAR CHART || MULTIPLE BAR CHART WITH EXAMPLE 
 
 
+from matplotlib import pyplot as plt
+import numpy as np
+
+years=["2017","2018","2019","2020"]
+
+cse=[75,80,47,82]
+it=[46,58,35,52]
+ece=[67,59,72,60]
+eee=[53,45,57,41]
+w =0.2
+plt.figure(figsize=(10,5))
+
+#LOCATION TO PLOT
+cse_bar=np.arange(len(years))
+it_bar=[i+w for i in cse_bar]
+ece_bar=[c+w for c in it_bar]
+eee_bar=[e+w for e in ece_bar]
 
 
+#print(cse_bar)
+plt.bar(cse_bar,cse,width=w,label="cse",color="orange")
+
+#print(it_bar)
+plt.bar(it_bar,it,width=w,label="it",color="pink")
+
+#print(ece_bar)
+plt.bar(ece_bar,ece,width=w,label="ece",color="red")
+
+#print(eee_bar)
+plt.bar(eee_bar,eee,width=w,label="eee",color="yellow")
+
+plt.xticks(cse_bar+w+w/2,year)  #midel of the year 
 
 
-
-
+plt.title("Placement Comparision")
+plt.xlabel("Y E A R S")
+plt.ylabel("Placement Count")
+plt.legend()
+plt.show()
 
 
 
