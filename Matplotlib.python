@@ -1,0 +1,263 @@
+Matplotlib is a cross-platform, data visualization and graphical plotting 
+library (histograms, scatter plots, bar charts, etc) for Python and 
+its numerical extension NumPy. As such, it offers a viable open source 
+alternative to MATLAB. Developers can also use matplotlib’s APIs
+(Application Programming Interfaces) to embed plots in GUI applications.
+
+
+matplotlib = data visvaligation package
+	-> pyplot
+	-> pylab
+
+
+-> Line chart
+-> Bar chart
+-> Histogram
+-> scatter polt
+-> pie plot
+
+Note:
+
+import mataplotlib pyplot as plt   OR  import mataplotlib from pyplot as plt
+
+e,g1
+
+from matplotlib import pyplot as plt
+x=[10,20,30]
+y=[10,20,30]
+plt.plot(x,y)
+plt.title("simple line point")
+plt.xlabel("x-Axis")
+plt.ylabel("y-Axis")
+plt.show()
+
+========= > Markers
+
+Representation of point in grap/chart
+x axis or y axis
+
+==>STYLES
+
+-> O = Circle
+-> S = Squarel
+-> D = Diamond
+-> P = Pentagon
+-> h = Hexagon
+-> . = Point
+-> * = star
+-> + = plus
+-> | = vertical line
+-> - = horizontal line 
+
+==> color 
+-> Edge color = (mec="")
+-> face color = (mfc="")
+-> single char = 
+(r,b,w,k,c,m,,,,,,)
+
+==>Hexadecimal
+
+==>size = (ms="")
+
+
+e,g2
+
+from matplotlib import pyplot as plt
+import numpy as np
+x = np.arange(0,20,2)
+y = x**2
+print(x,y)
+plt.plot(x,y,marker="r", ms="25", mec="k", mfc="r")
+plt.show()
+
+======> LINES
+plt.polt(x,y,ls="dotted",lw=20,c="b")
+
+Linestyle
+line = (ls)=(________)
+dotted = .......
+dashed = --------
+dashdot = -.-.-.-.-
+
+linewidth=(lw)
+linecolor=(c)
+
+e,g
+
+from matplotlib import pyplot as plt
+import numpy as np
+x = np.arange(0,20,4)
+y = x*2
+print(x,y)
+plt.plot(x,y,marker="D", ls="dashed", lw=20, c="g", ms=10, mec="y", mfc="b")
+plt.title("simple grph demo")
+plt.show()
+
+====> Multiple line single grpha
+
+from matplotlib import pyplot as plt
+import numpy as np
+x = np.arange(0,20,4)
+y1 = x*2
+y2 = x**2
+y3 = x**3
+print(x,y1,y2,y3) or
+			print(x,y1)
+			print(x,y2)
+			print(x,y3)
+
+plt.plot(x,y1,x,y2,x,y3) or
+			plt.plot(x,y1)
+			plt.plot(x,y2)
+			plt.plot(x,y3)
+
+plt.title("simple grph demo")
+plt.show()
+
+
+eg.2(multiple line everything is same ex,color,ls,lw,markers)
+
+from matplotlib import pyplot as plt
+import numpy as np
+x = np.arange(0,20,4)
+y1 = x*2
+y2 = x**2
+y3 = x**3
+print(x,y1,y2,y3)
+plt.plot(x,y1,x,y2,x,y3,marker="d",ls="dotted",lw="2",mec="r",mfc="r",c="b")
+plt.title("simple grph demo")
+plt.show()
+
+e,g3 (multiple line different )
+
+from matplotlib import pyplot as plt
+import numpy as np
+x = np.arange(0,20,4)
+y1 = x*2
+y2 = x**2
+y3 = x**3
+print(x,y1,y2,y3)
+plt.plot(x,y1,marker="d",ls="dotted",lw="2",mec="r",mfc="r",c="b")
+plt.plot(x,y2,marker=">",ls="dashdot",lw="4",mec="g",mfc="g",c="b")
+plt.plot(x,y3,marker="*",ls="dashed",lw="3",mec="y",mfc="y",c="b")
+plt.title("simple grph demo")
+plt.show()
+
+=====> FONT PROPERTIES ON TITLE AND LABELS
+
+#chenge the properties on title, label, color and size
+
+e,g
+
+from matplotlib import pyplot as plt
+import numpy as np
+x = np.arange(0,20,4)
+y = x*10
+print(x,y)
+plt.plot(x,y)
+f1={'family':'arial','color':'blue','size':20} ## arial means arial font family
+plt.title("multiples of 10",fontdict=f1)
+plt.xlabel("x - values",fontdict=f1)
+plt.ylabel("y Multiple 10",fontdict=f1)
+plt.show()
+
+
+from matplotlib import pyplot as plt
+import numpy as np
+x = np.arange(0,20,4)
+y = x*10
+print(x,y)
+plt.plot(x,y)
+f1={'family':'arial','color':'blue','size':20} ## arial means arial font family
+f2={'family':'calibri','color':'blue','size':20} ## calibri means calibri font family
+plt.title("multiples of 10",fontdict=f1) ## f1 is dictionary
+plt.xlabel("x - values",fontdict=f2)
+plt.ylabel("y Multiple 10",fontdict=f2)
+plt.show()
+
+
+===========> GRID FUNCTION WITH LINE PROPERTIES IN MATPLOTLIB
+ grid fuction is used to disply grid line on x-axis and y-axis 
+
+ex
+from matplotlib import pyplot as plt
+import numpy as np
+x = [1,2,3,4,5,6]
+y = [1,2,3,4,5,6]
+plt.plot(x,y)
+plt.grid(axis="both",ls="dotted",lw=1,c="blue")
+plt.show()
+
+
+=================> SUBPLOTS IN MATPLOTLIB
+ subplot is multiple plots in a single figure
+
+Subplot(R(row), C(column), I(index of plot))
+
+exp
+plt.subplot(1,2,1) =(1 row, 2 column, 1 index)
+plt.subplot(2,2,2) = (2 row, 2 column, 2 index)
+
+
+e,g
+
+from matplotlib import pyplot as plt
+import numpy as np
+x = [1,2,3,4,5,6]
+y1 = [10,20,30,40,50,60]
+y2 = [20,30,50,40,60,10]
+y3 = [60,30,50,20,60,10]
+y4 = [10,30,50,50,60,10]
+plt.suptitle("multiple plots")
+
+plt.subplot(2,2,1)
+plt.plot(x,y1)
+plt.title("PLOT-1")
+
+plt.subplot(2,2,2)
+plt.plot(x,y2)
+plt.title("PLOT-2")
+
+plt.subplot(2,2,3)
+plt.plot(x,y3)
+plt.title("PLOT-3")
+
+plt.subplot(2,2,4)
+plt.plot(x,y4)
+plt.title("PLOT-4")
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
