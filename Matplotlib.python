@@ -1,3 +1,5 @@
+				MATPLOTLIB
+
 Matplotlib is a cross-platform, data visualization and graphical plotting 
 library (histograms, scatter plots, bar charts, etc) for Python and 
 its numerical extension NumPy. As such, it offers a viable open source 
@@ -19,6 +21,26 @@ matplotlib = data visvaligation package
 Note:
 
 import mataplotlib pyplot as plt   OR  import mataplotlib from pyplot as plt
+
+-----> 
+	plt.plot, plt.title, plt.xlabel, plt.ylabel, xticks( ) , 
+	yticks( ) , xlabel( ) , ylabel( ) , xlim( ) , ylim( ) 
+	-> linewidth=(lw)
+	-> linecolor=(c)
+	-> Edge color = (mec="")
+	-> face color = (mfc="")
+	-> single char = 
+	(r,b,w,k,c,m,,,,,,)
+	Linestyle
+	-> line = (ls)=(________)
+	-> dotted = .......
+	-> dashed = --------
+	-> dashdot = -.-.-.-.-
+	-> plt.grid = grid fuction is used to disply grid line on x-axis and y-axis 
+	->subplot is multiple plots in a single figure
+	plt.subplot(1,2,1) =(1 row, 2 column, 1 index)
+	plt.subplot(2,2,2) = (2 row, 2 column, 2 index)
+
 
 e,g1
 
@@ -85,17 +107,17 @@ linecolor=(c)
 e,g
 
 from matplotlib import pyplot as plt
-import numpy as np
-x = np.arange(0,20,4)
+OAOAOAimport numpy as np
+OAOAOAx = np.arange(0,20,4)
 y = x*2
 print(x,y)
 plt.plot(x,y,marker="D", ls="dashed", lw=20, c="g", ms=10, mec="y", mfc="b")
-plt.title("simple grph demo")
+OAOAOAplt.title("simple grph demo")
 plt.show()
 
 ====> Multiple line single grpha
 
-from matplotlib import pyplot as plt
+OAOAOAfrom matplotlib import pyplot as plt
 import numpy as np
 x = np.arange(0,20,4)
 y1 = x*2
@@ -379,25 +401,66 @@ plt.ylabel("Placement Count")
 plt.legend()
 plt.show()
 
+==================>PIE CHART IN MATPLOTLIB || PIE GRAPH || PIE PLOT IN MATPLOTLIB
+
+--> explode =The explode() function breaks a string into an array.
+  
+--> shadow =applying a shadow format.  
+
+--> autopct = autopct enables you to display the percent value using Python string formatting
+
+--> startangle = where it should represent 
+The default startangle is 0, which would start the "Frogs" slice on 
+the positive x-axis. This example sets startangle = 90 such that 
+everything is rotated counter-clockwise by 90 degrees, and the frog 
+slice starts on the positive y-axis.
+
+e,g1
+
+from matplotlib import pyplot as plt
+
+student_performance=["exelent","good","avg","poor"]
+student_valuces=[15,25,35,45]
+plt.figure(figsize=(8,10))
+
+plt.pie(student_valuces,labels=student_performance,startangle=0,explode=[0.2,0.3,0,0],shadow=True,colors=["black","blue","red","yellow"],autopct="%1.1f%%")
+plt.legend(title="performances")
+plt.show()
 
 
+=====> HISTOGRAM CHART IN MATPLOTLIB || HISTOGRAM GRAPH || 
+			HISTOGRAM PLOT IN MATPLOTLIB
 
 
+e,g 
+
+from matplotlib import pyplot as plt
+
+marks=[22,23,55,85,44,75,58,58,14]
+grade=[0,21,25,22]
+plt.title=("performances")
+plt.hist(marks,grade,histtype="bar",rwidth=0.7,facecolor="blue")
+
+plt.xticks([])
+plt.show()
 
 
+====>xticks( ) , yticks( ) , xlabel( ) , ylabel( ) , xlim( ) , ylim( ) IN MATPLOTLIB
 
 
+from matplotlib import pyplot as plt
 
+x=[10,20,30,40,50,60]
+y=[100,200,300,400,500,600]
 
+plt.plot(x,y)
+plt.xlabel("x-axis")
+plt.ylabel("y-axis")
+#plt.xticks(x,["a","b","c","d","e","f"]) # exchenge the value x axis
+#plt.yticks(y,["0-100","100-200","200-300","300-400","400-500","500-600"]) ## exchenge the value y axis
 
-
-
-
-
-
-
-
-
-
-
+plt.xlim([10,100])
+plt.ylim([200,1000])
+plt.title("Grap")
+plt.show()
 
